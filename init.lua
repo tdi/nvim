@@ -980,12 +980,11 @@ require('lazy').setup({
       -- for example
       provider = 'copilot',
       openai = {
-        endpoint = 'https://api.openai.com/v1',
         model = 'cloude-3.7-sonnet-thought', -- your desired model (or use gpt-4o, etc.)
         timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
         temperature = 0,
         max_completion_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
-        --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+        reasoning_effort = 'medium', -- low|medium|high, only used for reasoning models
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
