@@ -902,8 +902,12 @@ require('lazy').setup({
       -- add any opts here
       -- for example
       provider = 'copilot',
-      openai = {
-        model = 'cloude-3.7-sonnet-thought', -- your desired model (or use gpt-4o, etc.)
+      cursor_applying_provider = 'copilot',
+      behaviour = {
+        enable_cursor_planning_mode = true,
+      },
+      copilot = {
+        model = 'claude-3.7-sonnet-thought', -- your desired model (or use gpt-4o, etc.)
         timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
         temperature = 0,
         max_completion_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
