@@ -117,6 +117,25 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<C-w>|', ':vsplit<CR>', { desc = 'Split vertical' })
 vim.keymap.set('n', '<C-w>-', ':split<CR>', { desc = 'Split vertical' })
 
+vim.keymap.set('n', '<leader>qs', function()
+  require('persistence').load()
+end, { desc = 'load session for current directory' })
+
+-- select a session to load
+vim.keymap.set('n', '<leader>qS', function()
+  require('persistence').select()
+end, { desc = 'select session to load' })
+
+-- load the last session
+vim.keymap.set('n', '<leader>ql', function()
+  require('persistence').load { last = true }
+end, { desc = 'load the last session' })
+
+-- stop Persistence => session won't be saved on exit
+vim.keymap.set('n', '<leader>qd', function()
+  require('persistence').stop()
+end, { desc = 'stop saving session for current directory' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
