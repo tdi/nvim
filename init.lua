@@ -115,7 +115,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
 vim.keymap.set('n', '<C-w>|', ':vsplit<CR>', { desc = 'Split vertical' })
-vim.keymap.set('n', '<C-w>-', ':split<CR>', { desc = 'Split vertical' })
+vim.keymap.set('n', '<C-w>_', ':split<CR>', { desc = 'Split vertical' })
 
 vim.keymap.set('n', '<leader>qs', function()
   require('persistence').load()
@@ -212,14 +212,6 @@ require('lazy').setup({
     },
   },
 
-  {
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
-    config = function()
-      require('copilot').setup {}
-    end,
-  },
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -911,13 +903,6 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-  },
-
-  {
-    'zbirenbaum/copilot-cmp',
-    config = function()
-      require('copilot_cmp').setup()
-    end,
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
