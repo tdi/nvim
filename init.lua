@@ -55,6 +55,12 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- Fold
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldenable = false -- start with folds open
+vim.opt.foldlevel = 99 -- high level so folds are open by default
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
@@ -75,6 +81,8 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 vim.opt.termguicolors = true
+-- vim.opt.autochdir = true
+vim.keymap.set('n', '<leader>e', ':e %:h/', { desc = 'Edit relative to current file' })
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
