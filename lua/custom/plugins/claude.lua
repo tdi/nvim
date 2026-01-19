@@ -6,4 +6,5 @@ return {
   config = function()
     require('claude-code').setup()
   end,
+  enabled = false,
 }

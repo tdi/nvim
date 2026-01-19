@@ -3,6 +3,13 @@ return {
     'folke/snacks.nvim',
     priority = 1000,
     lazy = false,
+    keys = {
+      { '<C-/>', function() Snacks.terminal() end, desc = 'Toggle Terminal', mode = { 'n', 't' } },
+      { '<leader>tt', function() Snacks.terminal() end, desc = 'Toggle Terminal' },
+      { '<leader>tf', function() Snacks.terminal(nil, { win = { position = 'float' } }) end, desc = 'Floating Terminal' },
+      { '<leader>tv', function() Snacks.terminal(nil, { win = { position = 'right' } }) end, desc = 'Terminal Right' },
+      { '<leader>th', function() Snacks.terminal(nil, { win = { position = 'bottom' } }) end, desc = 'Terminal Bottom' },
+    },
     ---@type snacks.Config
     opts = {
       -- your configuration comes here
